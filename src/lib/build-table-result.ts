@@ -107,7 +107,7 @@ function pipeWithTableSchema(
             header.metadata.referenceTo = {
               schema: constraint.foreignKey.foreignSchemaName!,
               table: constraint.foreignKey.foreignTableName!,
-              column: constraint.foreignKey.columns[foundIndex]!,
+              column: constraint.foreignKey?.foreignColumns[foundIndex] ?? constraint.foreignKey?.columns[foundIndex]!
             };
           }
         }
